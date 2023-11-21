@@ -28,7 +28,7 @@ public class Main {
             System.out.println("Changement :"+livreToFind);
         }
       //Récupération d'un livre par titre
-        TypedQuery<Livre> livreFindTitre = (TypedQuery<Livre>) em.createQuery("SELECT h FROM Livre h WHERE h.titre='Recette'", Livre.class);
+        TypedQuery<Livre> livreFindTitre = (TypedQuery<Livre>) em.createQuery("SELECT h FROM Livre h WHERE h.titre='Germinal'", Livre.class);
         if(null!=livreFindTitre) {
             Livre resultTitre = livreFindTitre.getSingleResult();
             System.out.println(resultTitre);
