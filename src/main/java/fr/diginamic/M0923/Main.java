@@ -25,10 +25,11 @@ public class Main {
         //Modifcation d'un livre
         Livre livreAModifier = em.find(Livre.class, 5);
         if (null != livreAModifier) {
-            livreAModifier.setTitre("Que Du plaisir dans la cuisine");
+            String ancienTitre=livreAModifier.getTitre();
+            livreAModifier.setTitre("Du plaisir dans la cuisine");
             Livre livreToFind = em.find(Livre.class,5);
             System.out.println("Modifcation d'un livre");
-            System.out.println("Changement :"+livreToFind);
+            System.out.println("Changement : Ancien titre :"+ancienTitre+", nouveau titre : "+livreToFind.getTitre());
             System.out.println("-------------------------------------------------------------");
         }
       //Récupération d'un livre par titre
