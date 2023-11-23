@@ -53,10 +53,9 @@ public class Livre {
 
     @Override
     public String toString() {
-        return "Livre{" +
+        return "Livre :" +
                 "id=" + id +
                 ", titre='" + titre + '\'' +
-                ", auteur='" + auteur + '\'' +
-                '}';
+                ", auteur='" + auteur + '\'' ;
     }
 }

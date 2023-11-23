@@ -18,15 +18,16 @@ public class Main {
         System.out.println("La connexion");
         System.out.println(emf);
         System.out.println("-------------------------------------------------------------");
-/*//Create new livre
-        Livre livreToCreate = new Livre("Recette", "Francis Navarre");
-        em.persist(livreToCreate);*/
+        //Create new livre
+        Livre livreToCreate = new Livre("CodinGame", "Inédit");
+        em.persist(livreToCreate);
 
         //Modifcation d'un livre
         Livre livreAModifier = em.find(Livre.class, 5);
         if (null != livreAModifier) {
             String ancienTitre=livreAModifier.getTitre();
             livreAModifier.setTitre("Du plaisir dans la cuisine");
+            //Vérification
             Livre livreToFind = em.find(Livre.class,5);
             System.out.println("Modifcation d'un livre");
             System.out.println("Changement : Ancien titre :"+ancienTitre+", nouveau titre : "+livreToFind.getTitre());
@@ -49,8 +50,6 @@ public class Main {
             System.out.println(resultAthor);
             System.out.println("-------------------------------------------------------------");
         }
-
-
         //Affichage des livres avec titre et auteur
         TypedQuery<Livre> livreFind = (TypedQuery<Livre>) em.createQuery("SELECT h FROM Livre h ");
         if(null!=livreFind ) {
